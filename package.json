@@ -1,0 +1,61 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "learning node, expresss, and mongodb",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "import": "node dev-data/data/import-dev-data.js --import",
+    "delete": "node dev-data/data/import-dev-data.js --delete",
+    "start:prod": "set NODE_ENV=production&& nodemon server.js",
+    "debug": "ndb server.js",
+    "watch:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js",
+    "build:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js"
+  },
+  "author": "Septian",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "axios": "^1.4.0",
+    "bcrypt": "^5.1.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^6.7.0",
+    "helmet": "^3.16.0",
+    "hpp": "^0.2.3",
+    "html-to-text": "^5.1.1",
+    "jsonwebtoken": "^9.0.0",
+    "linear-solve": "^1.2.1",
+    "mongoose": "^7.0.3",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.1",
+    "nodemailer-brevo-transport": "^2.1.0",
+    "pug": "^3.0.2",
+    "sharp": "^0.33.3",
+    "slugify": "^1.6.5",
+    "stripe": "^15.1.0",
+    "validator": "^10.11.0",
+    "xss-clean": "^0.1.1"
+  },
+  "devDependencies": {
+    "@types/stripe": "^8.0.417",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "nodemon": "^2.0.20",
+    "parcel-bundler": "^1.12.5",
+    "prettier": "^1.17.0"
+  },
+  "engines": {
+    "node": ">=20.12.0"
+  }
+}
