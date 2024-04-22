@@ -9,7 +9,7 @@ const compression = require('compression');
 const hpp = require('hpp');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
-// const bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
@@ -54,7 +54,7 @@ app.use('/api', limiter);
 
 app.post(
   '/webhook-checkout',
-  express.raw({ type: 'application/json' }),
+  bodyParser.raw({ type: 'application/json' }),
   bookingController.webhookCheckout
 );
 
