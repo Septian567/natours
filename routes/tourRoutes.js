@@ -2,6 +2,7 @@ const express = require('express');
 const tourController = require('./../controllers/tourController');
 const authController = require('./../controllers/authController');
 const reviewRouter = require('./../routes/reviewRoutes');
+const bookingRouter = require('./../routes/bookingRoutes');
 
 const router = express.Router();
 
@@ -40,6 +41,7 @@ router
   .post(
     authController.protect,
     authController.restrictTo('admin', 'lead-guide'),
+    router.use('/:tourId/bookings', bookingRouter),
     tourController.createTour
   );
 
@@ -49,6 +51,7 @@ router
   .patch(
     authController.protect,
     authController.restrictTo('admin', 'lead-guide'),
+    router.use('/:tourId/bookings', bookingRouter),
     tourController.uploadTourImages,
     tourController.resizeTourImages,
     tourController.updateTour
@@ -56,6 +59,7 @@ router
   .delete(
     authController.protect,
     authController.restrictTo('admin', 'lead-guide'),
+    router.use('/:tourId/bookings', bookingRouter),
     tourController.deleteTour
   );
 
